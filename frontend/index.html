@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteamSum | MapReduce Review Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="glass-bg"></div>
+    
+    <main class="container">
+        <header>
+            <div class="logo">
+                <span class="highlight">MapReduce</span>-SteamReviews
+                <div class="tagline">Scalable Review Analysis Engine</div>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn btn-secondary">
+                    <span id="themeIcon">🌙</span> <span id="themeText">Karanlık Mod</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card glass">
+                <h3>Toplam Yorum</h3>
+                <div id="totalReviews" class="stat-value">0</div>
+            </div>
+            <div class="stat-card glass">
+                <h3>Analiz Süresi</h3>
+                <div id="executionTime" class="stat-value">0s</div>
+            </div>
+            <div class="stat-card glass">
+                <h3>Oyun Sayısı</h3>
+                <div id="gameCount" class="stat-value">0</div>
+            </div>
+        </section>
+
+        <div class="main-grid">
+            <section class="chart-section glass">
+                <h2>Genel Duygu Dağılımı</h2>
+                <div class="chart-container">
+                    <canvas id="sentimentChart"></canvas>
+                </div>
+            </section>
+
+            <section class="wordcloud-section glass">
+                <h2>Global Kelime Bulutu (Top 20)</h2>
+                <div id="wordCloud" class="word-cloud"></div>
+            </section>
+        </div>
+
+        <section class="games-section glass">
+            <h2>Oyun Bazlı İncelemeler</h2>
+            <div class="search-bar">
+                <input type="text" id="gameSearch" placeholder="Oyun ara...">
+            </div>
+            <div class="table-container">
+                <table id="gamesTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="name">Oyun Adı <span class="sort-icon">↕</span></th>
+                            <th data-sort="pos">Olumlu <span class="sort-icon">↕</span></th>
+                            <th data-sort="neg">Olumsuz <span class="sort-icon">↕</span></th>
+                            <th data-sort="ratio">Başarı Oranı <span class="sort-icon">↕</span></th>
+                            <th>Popüler Kelimeler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gamesBody">
+                        <!-- Veriler JS ile eklenecek -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="loader" class="loader-overlay hidden">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>MapReduce İşlemi Çekirdekler Üzerinde Çalışıyor...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
