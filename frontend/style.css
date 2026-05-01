@@ -16,7 +16,8 @@ body.light-theme {
     --card-bg: rgba(255, 255, 255, 0.85);
     --glass-border: rgba(0, 0, 0, 0.1);
     --text-primary: #0f172a;
-    --text-secondary: #334155; /* Daha koyu yaptık */
+    --text-secondary: #334155;
+    /* Daha koyu yaptık */
     --accent-color: #2563eb;
     --accent-glow: rgba(37, 99, 235, 0.1);
     --table-header-bg: rgba(0, 0, 0, 0.05);
@@ -24,7 +25,7 @@ body.light-theme {
 
 body.light-theme .glass-bg {
     background: radial-gradient(circle at 20% 30%, #e2e8f0 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, #f1f5f9 0%, transparent 50%);
+        radial-gradient(circle at 80% 70%, #f1f5f9 0%, transparent 50%);
 }
 
 body.light-theme .tagline {
@@ -37,9 +38,11 @@ body.light-theme .highlight {
     color: #1d4ed8;
     text-shadow: none;
 }
+
 body.light-theme .stat-value {
     background: #1e293b;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: unset;
     color: #0f172a;
 }
@@ -69,7 +72,7 @@ body {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 20% 30%, #1e293b 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, #0f172a 0%, transparent 50%);
+        radial-gradient(circle at 80% 70%, #0f172a 0%, transparent 50%);
     z-index: -1;
 }
 
@@ -138,6 +141,7 @@ header {
     font-weight: 700;
     background: linear-gradient(to bottom, #fff, #94a3b8);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -255,9 +259,20 @@ td {
     font-size: 0.85rem;
 }
 
-.ratio-high { background: rgba(16, 185, 129, 0.1); color: var(--success); }
-.ratio-mid { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
-.ratio-low { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
+.ratio-high {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+.ratio-mid {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.ratio-low {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
 
 .tag-list {
     display: flex;
@@ -315,7 +330,9 @@ td {
     z-index: 1000;
 }
 
-.hidden { display: none; }
+.hidden {
+    display: none;
+}
 
 .loader-content {
     text-align: center;
@@ -332,7 +349,9 @@ td {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width: 900px) {

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isLight = document.body.classList.contains('light-theme');
         themeIcon.textContent = isLight ? '☀️' : '🌙';
         themeText.textContent = isLight ? 'Aydınlık Mod' : 'Karanlık Mod';
-        
+
         // Update Chart Colors if light mode
         if (sentimentChart) {
             sentimentChart.options.plugins.legend.labels.color = isLight ? '#64748b' : '#94a3b8';
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderChart(pos, neg) {
         const ctx = document.getElementById('sentimentChart').getContext('2d');
         const isLight = document.body.classList.contains('light-theme');
-        
+
         if (sentimentChart) {
             sentimentChart.destroy();
         }
@@ -91,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 plugins: {
                     legend: {
                         position: 'bottom',
-                        labels: { 
-                            color: isLight ? '#64748b' : '#94a3b8', 
-                            font: { family: 'Inter' } 
+                        labels: {
+                            color: isLight ? '#64748b' : '#94a3b8',
+                            font: { family: 'Inter' }
                         }
                     }
                 },
@@ -109,11 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const span = document.createElement('span');
             span.className = 'word-item';
             span.textContent = item.text;
-            
+
             const fontSize = Math.max(0.8, Math.min(2.2, (item.value / words[0].value) * 3));
             span.style.fontSize = fontSize + 'rem';
             span.style.opacity = Math.max(0.4, item.value / words[0].value);
-            
+
             wordCloudEl.appendChild(span);
         });
     }
@@ -122,13 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
         gamesBody.innerHTML = '';
         games.forEach(game => {
             const row = document.createElement('tr');
-            
+
             let ratioClass = 'ratio-mid';
             if (game.ratio >= 90) ratioClass = 'ratio-high';
             else if (game.ratio < 70) ratioClass = 'ratio-low';
 
             // Top words sayısını artırdık (20'ye kadar)
-            const tags = Object.keys(game.top_words).slice(0, 20).map(word => 
+            const tags = Object.keys(game.top_words).slice(0, 20).map(word =>
                 `<span class="mini-tag">${word}</span>`
             ).join('');
 
@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 let valA = a[key];
                 let valB = b[key];
                 if (key === 'name') {
-                    return currentSort.order === 'desc' 
-                        ? valB.localeCompare(valA) 
+                    return currentSort.order === 'desc'
+                        ? valB.localeCompare(valA)
                         : valA.localeCompare(valB);
                 }
                 return currentSort.order === 'desc' ? valB - valA : valA - valB;
