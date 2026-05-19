@@ -23,3 +23,9 @@ analysis_results.json
 .idea/
 *.swp
 *.swo
+
+# Cloud Deployment
+s3_ready/raw-reviews/
+s3_ready/
+mapper.zip
+reducer.zip

@@ -354,8 +354,112 @@ td {
     }
 }
 
+/* Architecture Flowchart */
+.architecture-flow {
+    margin-bottom: 30px;
+    padding: 25px;
+    text-align: center;
+}
+
+.architecture-flow h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.flow-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.flow-step {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 20px 10px;
+    flex: 1;
+    min-width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.flow-step:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.highlight-step {
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.flow-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.flow-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.flow-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+.flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+}
+
+.arrow {
+  border: solid var(--accent-color);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 6px;
+}
+
+.arrow.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+body.light-theme .flow-step {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+body.light-theme .highlight-step {
+    background: rgba(37, 99, 235, 0.05);
+}
+
 @media (max-width: 900px) {
     .main-grid {
         grid-template-columns: 1fr;
+    }
+    .flow-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .flow-step {
+        width: 100%;
+    }
+    .flow-arrow {
+        margin: 10px 0;
+    }
+    .arrow.right {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
     }
 }

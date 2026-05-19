@@ -26,6 +26,41 @@
             </div>
         </header>
 
+        <section class="architecture-flow glass">
+            <h2>☁️ AWS Serverless MapReduce Mimarisi</h2>
+            <div class="flow-container">
+                <div class="flow-step highlight-step">
+                    <div class="flow-icon">📁</div>
+                    <div class="flow-title">1. Veri Bölümlendirme</div>
+                    <div class="flow-desc">Devasa veri seti, paralel işleme uygun olması için oyun bazlı bağımsız parçalara (shards) ayrıştırılır.</div>
+                </div>
+                <div class="flow-arrow"><i class="arrow right"></i></div>
+                <div class="flow-step highlight-step">
+                    <div class="flow-icon">🪣</div>
+                    <div class="flow-title">2. S3 Object Storage</div>
+                    <div class="flow-desc">Veriler bulut depolama sistemine (S3) asenkron yüklenir ve olay güdümlü (Event-Driven) mimariyi başlatır.</div>
+                </div>
+                <div class="flow-arrow"><i class="arrow right"></i></div>
+                <div class="flow-step highlight-step">
+                    <div class="flow-icon">⚡</div>
+                    <div class="flow-title">3. MAP (Paralel İşlem)</div>
+                    <div class="flow-desc">S3'teki her dosya bağımsız bir AWS Lambda uyandırarak eşzamanlı kelime frekansı ve duygu analizi yapar.</div>
+                </div>
+                <div class="flow-arrow"><i class="arrow right"></i></div>
+                <div class="flow-step highlight-step">
+                    <div class="flow-icon">🔄</div>
+                    <div class="flow-title">4. REDUCE (Kümeleme)</div>
+                    <div class="flow-desc">İşlenen binlerce ara çıktı, merkezi bir AWS Lambda tarafından toplanıp indirgenerek tek bir rapora dönüşür.</div>
+                </div>
+                <div class="flow-arrow"><i class="arrow right"></i></div>
+                <div class="flow-step highlight-step">
+                    <div class="flow-icon">📊</div>
+                    <div class="flow-title">5. Arayüz Entegrasyonu</div>
+                    <div class="flow-desc">Flask backend sunucusu, tamamlanmış bulut verisini dinamik olarak çekip gerçek zamanlı istatistiklere dönüştürür.</div>
+                </div>
+            </div>
+        </section>
+
         <section class="stats-grid">
             <div class="stat-card glass">
                 <h3>Toplam Yorum</h3>
